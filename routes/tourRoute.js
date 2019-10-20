@@ -7,11 +7,14 @@ const {
   createTour,
   getTour,
   updateTour,
-  deleteTour
+  deleteTour,
+  aliasTopTours
 } = require('../controllers/tourController');
 
 //PARAM MIDDLEWARE
 /* router.param('id', checkID); */
+
+router.route('/top-5-tours').get(aliasTopTours, getAllTours);
 
 router
   .route('/')
